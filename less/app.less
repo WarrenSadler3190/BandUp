@@ -1,0 +1,413 @@
+@base: #fff;
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700);
+@BUFont: 'Josefin Sans', sans-serif;
+
+@-webkit-keyframes spinCycle
+{
+0%   {-webkit-transform: rotate(0deg);}
+25%  {-webkit-transform: rotate(180deg);}
+50%  {-webkit-transform: rotate(360deg);}
+75%  {-webkit-transform: rotate(180deg);}
+100% {-webkit-transform: rotate(0deg);}
+}
+
+@-moz-keyframes spinCycle
+{
+0%   {-moz-transform: rotate(0deg);}
+25%  {-moz-transform: rotate(180deg);}
+50%  {-moz-transform: rotate(360deg);}
+75%  {-moz-transform: rotate(180deg);}
+100% {-moz-transform: rotate(0deg);}
+}
+
+.black{
+	background-color: black;
+}
+
+.white{
+	color:white;
+}
+
+#footer{
+	width: 100% !important;
+	height: 40px;
+	background-color: black;
+	position: fixed;
+	z-index: 10;
+	bottom: 0px;
+
+	#twitter{
+		position: relative;
+		left: 20px;
+		top: 10px;
+		color:white;
+		&:hover{
+			cursor: pointer;
+			color: #29B3DF;
+		}
+	}
+	#facebook{
+		position: relative;
+		left: 35px;
+		top: 10px;
+		color:white;
+		transition:all 100ms ease-in-out;
+		&:hover{
+			cursor: pointer;
+			color: #2C68DB;
+		}
+	}
+
+	#chatButton{
+		float: right;
+		bottom:18px;
+		width: 100px;
+		height: 40px;
+		border:1px solid black;
+		color:black;
+		background-color: white;
+		text-align: center;
+		padding: 10px;
+
+		&:hover{
+			cursor: pointer;
+		}
+	}
+
+}
+
+
+body{
+  background-color: @base;
+  font-family: @BUFont;
+}
+
+#nav-logo{
+	padding: 6px;
+	color:white;
+	vertical-align: middle;
+}
+
+#logo{
+	width:200px;
+	margin:0px auto;
+	position: relative;
+	left:350px;
+	top:70px;
+}
+
+#dots{
+	width: 230px;
+	margin: 0px auto;
+	position: relative;
+	left:135px;
+	top:70px;
+	-webkit-animation-name: spinCycle;
+	-webkit-animation-duration: 100s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-name: spinCycle;
+	-moz-animation-duration: 100s;
+	-moz-animation-timing-function: linear;
+	-moz-animation-iteration-count: infinite;
+}
+#mainLogo{
+	text-align:center;
+	letter-spacing: 30px;
+	font-weight: normal;
+	position: relative;
+	top:80px;
+	color:white;
+	text-shadow:0px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+#blurb{
+	position: relative;
+	text-align: center;
+	letter-spacing: 10px;
+	margin-bottom: 30px;
+	top: 90px;
+	color:white;
+}
+
+#buttons{
+	position: relative;
+	left: 250px;
+}
+
+#mainContent{
+	width: 100% !important;
+	height: 100% !important;
+}
+
+#mainContent{
+	#mainLogo{
+		display: hidden;
+	}
+	#blurb{
+		display: hidden;
+	}
+}
+
+#section-1{
+	width: 100% !important;
+	height: 700px;
+}
+
+
+.bu-black-button{
+	position: relative;
+	top:120px;
+	left:400px;
+	text-align: center;
+	padding: 20px;
+	font-size: 25px;
+	font-weight: bold;
+	width: 230px;
+	height: 75px;
+	color:white;
+	background-color: black;
+	text-decoration: none;
+	margin:0px auto;
+
+}
+
+.bu-white-button{
+	float:left;
+	position: relative;
+	left: 300px;
+	top:100px;
+	border:solid 2px black;
+	text-align: center;
+	padding: 18px;
+	font-size: 25px;
+	font-weight: bold;
+	display:block;
+	width: 198px;
+	height: 75px;
+	color:#000;
+	background-color: white;
+	text-decoration: none;
+	margin: 0px auto;
+
+}
+
+#login{
+	background-color: #000;
+	color:#fff;
+	font-weight: bold;
+
+	&:hover{
+		color:#fff;
+	}
+}
+
+
+#signUp{
+	background-color: #000;
+	color:#fff;
+	font-weight: bold;
+
+	&:hover{
+		color:#fff;
+	}
+}
+
+#dashButton{
+	background-color: black;
+	color:white;
+	font-weight: bold;
+	position: relative;
+	top: 70px;
+}
+
+
+
+// DASHBOARD STYLE 
+
+#profileHeader{
+	width:100% !important;
+	background-color: #222;
+	height: 300px;
+	position: relative;
+	z-index: -2;
+	overflow: hidden;
+}
+
+#profileImage{
+	top: -200px;
+	position: relative;
+	z-index: -1;
+}
+
+#dashHeader{
+	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.5);
+	padding-left: 40px;
+	width: 400px;
+	height: 100px;
+	position: relative;
+	top: 235px;
+	background-color: white;
+	z-index: 0;
+}
+
+#smile{
+	display: inline;
+	margin-left:  15px;
+}
+
+#makeBand{
+	color: white;
+	font-weight: bold;
+	background-color: black;
+}
+
+#message-icon{
+	margin-right: 5px;
+}
+
+#makeBandAlert{
+	margin-right: 5px;
+	color:#EF4242;
+}
+
+.bandBox{
+	background-color: #3DDF75;
+	float: left;
+	margin-right: 20px;
+	width: 200px;
+	height: 150px;
+	border: 2px solid black;
+
+	h5{
+		position: relative;
+		color:white;
+		background-color: black;
+		top:45px;
+		width:100px;
+	}
+
+	.joinBand{
+		position: relative;
+		top:58px;
+		background-color: black;
+
+		.joinIcon{
+			margin-right: 15px;
+			transition:all 100ms ease-in-out;
+			&:hover{
+				color: #3DDF75;
+			}
+		}
+	}
+}
+
+.memberBox{
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	width: 200px;
+	height: 150px;
+	border: 2px solid black;
+
+	h5{
+		position: relative;
+		color:white;
+		background-color: black;
+		top:100px;
+		width:100px;
+	}
+}
+
+#bandProfileHeader{
+	width: 100% !important;
+	background-color: #333;
+	height: 300px;
+
+	h1{
+		width: 250px;
+		background-color: white;
+		position: relative;
+		top: 240px;
+	}
+}
+
+
+.event{
+	border:2px solid black;
+	padding: 10px;
+	margin-bottom: 20px;
+
+	.eventDelete{
+		background-color: black;
+		top:30px;
+		right: 10px;
+	}
+}
+
+#eventSubmit{
+	background-color: black;
+}
+
+
+#userBox{
+	padding: 20px;
+
+	a{
+		padding: 10px;
+		display: block;
+		background-color: white;
+		width: 90px;
+	}
+}
+
+.message{
+	border:1px solid black;
+	padding: 10px;
+	margin-bottom: 30px;
+}
+
+#dashButton{
+	background-color: white;
+	border:1px solid black;
+	color: black;
+	position: relative;
+	left: 375px;
+	transition: all 400ms ease-in-out;
+	&:hover{
+		background-color: black;
+		color:white;
+	}
+}
+
+#chatbox{
+	padding-top: 10px;
+	left: 700px;
+	bottom:40px;
+	z-index: 15;
+	position: fixed;
+	width: 400px;
+	height: 500px;
+	background-color: black;
+}
+
+#chatwindow{
+	margin: 0px auto;
+	background-color: #AAA;
+	width: 375px;
+	height: 350px;
+	margin-bottom: 10px;
+}
+
+#chatinput{
+	height: 50px;
+}
+
+#chatsendbutton{
+	color:black;
+	background-color: white;
+}
+
+.hidden{
+	display: hidden;
+}

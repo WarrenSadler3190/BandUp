@@ -1,0 +1,18 @@
+extends ../template/layout
+
+block content
+	.row
+		.small-12.columns
+			form(action='#' method='#')#loginForm
+				fieldset
+					legend Log In
+					.row
+						.small-6.columns
+							label(for='name')	Email:
+							input(type='text', name='email' data-validetta="required,email")#email
+						.small-6.columns	
+							label(for='image') Password:
+							input(type='password', name='password' data-validetta="required")#password
+					.row
+						.small-12.columns
+							button.expand#login Log In

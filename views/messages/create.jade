@@ -1,0 +1,20 @@
+extends ../template/layout
+
+block content
+  .row
+    .small-12.columns
+      h3(data-id='#{recipient.id}') Send Message to #{recipient.name}
+  .row
+    .small-12.columns
+      form#creatMessageFrom
+        .row
+          .small-12.columns
+            label(for='title') Message Title:
+            input(type='text' name='title')#title
+        .row
+          .small-12.columns
+            label(for='body') Message Body:
+            textarea(name='body')#body
+        .row
+          .small-12.columns
+            button.expand.black#createMessage Send Message

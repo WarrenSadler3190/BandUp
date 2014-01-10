@@ -1,0 +1,36 @@
+extends ../template/layout
+
+block content
+  #mainContent
+    #section-1
+      if user
+        .row
+          .small-12.columns
+            img(src='../images/buMiniWhite2.png')#logo
+            img(src='../images/whiteDots.png')#dots
+        .row
+          .small-12.columns
+            h1#mainLogo Hello #{user.name}!
+        .row
+          .small-12.columns
+            h5#blurb View Your Dash
+        .row
+          .small-12.columns
+            a.button(href='/dashboard')#dashButton Go To Dash
+      else
+        if !status
+          .row
+            .small-12.columns
+              img(src='../images/buMiniWhite2.png')#logo
+              img(src='../images/whiteDots.png')#dots
+          .row
+            .small-12.columns
+              h1#mainLogo BAND UP
+          .row
+            .small-12.columns
+              h5#blurb Manage Your Band and Your Time
+          .row
+            .small-12.columns
+              a.bu-black-button(href='/signUp') SIGN UP 
+              
+

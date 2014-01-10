@@ -1,0 +1,24 @@
+extends ../template/layout
+
+block content
+	#bandProfileHeader(style="background-image: url(#{band.image}); background-position:center; background-size:cover;")
+		.row
+			.small-12.columns
+				h1 #{band.name}
+	.row
+		.small-12.columns
+			h3 #{band.name} Members
+			hr
+			#membersContainer
+				for mems in band.members
+					.memberBox(style="background-image:url(#{mems.image}); background-position:center; background-size:cover;")
+						h5.memberName= mems.name
+
+	.row
+		.small-12.columns
+			h2 View Your Calendar
+			a(href='/calendar') Go
+	.row
+		.small-12.columns
+			h2 Missing Some Members?
+			a(href='/memberAdd') Add A Member

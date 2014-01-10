@@ -1,0 +1,39 @@
+.contain-to-grid.sticky
+  nav.top-bar#myNav
+    ul.title-area
+      li.name
+        a(href='/')
+          h6#nav-logo BAND UP ^
+      li.toggle-topbar.menu-icon
+        a(href='/')
+          span Nav
+    section.top-bar-section
+      ul.left
+      ul.right
+        if user
+          li.divider
+          li.active
+            a(href='/dashboard'): i.fa.fa-cog.white
+          li.divider
+              li: a.button.radius.success(href='/logout') Logout
+          if user.band
+            li.divider
+            li.active
+              a(href='/bands/#{user.band}'): i.fa.fa-group.white
+            li.divider
+            li.active
+              a(href='/calendar'): i.fa.fa-calendar.white     
+        else          
+          li: a.button.radius(href='/login') Login 
+#chatbox.hidden
+    #chatwindow
+    .row#inputrow
+      .small-12.columns
+        input#chatinput.expand(type="text", autofocus=true)
+    .row
+      .small-12.columns
+        button.button.expand#chatsendbutton Send
+#footer
+  i.fa.fa-twitter#twitter
+  i.fa.fa-facebook#facebook
+  #chatButton Chat

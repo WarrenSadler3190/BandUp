@@ -1,0 +1,15 @@
+extends ../template/layout
+
+block content
+	.row
+		.small-12.columns
+			h1 Add Members
+	.row
+		.small-12.columns
+			h3 Select Members to Add
+			form(action='/addMembers/',method='post')
+				for u in users 
+					label(for="user")=u.name
+					input(type="checkbox",value="#{u.id}",name="user") 
+					br
+				button(type='submit') Submit

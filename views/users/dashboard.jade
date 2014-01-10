@@ -1,0 +1,51 @@
+extends ../template/layout
+
+block content
+  #profileHeader(style="background-image:url(#{user.image});background-size:cover;background-position:center;")
+    h1#dashHeader Hello #{user.name}
+      i.fa.fa-smile-o#smile
+  .row
+    .small-12.columns
+      a(href="/messages") 
+        i.fa.fa-envelope#message-icon
+        | Check and Send Messages
+  .row
+    .small-12.columns
+      if !user.band
+        i.fa.fa-exclamation-triangle#makeBandAlert
+        | You need to make(or join) a band!
+
+        if bands.length
+          .row
+            .small-12.columns
+              h4 Are you a member of any of these bands?
+          .row
+            .small-12.columns
+              #bandsContainer
+                for band in bands
+                  .bandBox(data-id="#{band.id}" style='background-image:url(#{band.image});background-size:cover;background-position:center;')
+                    h5.bandName=band.name
+                    button.expand.joinBand 
+                      i.fa.fa-plus-square-o.joinIcon 
+                        | Join Band
+        .row
+          .small-12.columns
+            form#makeBandForm(action="/makeBand",method="post")
+              fieldset
+                legend Make A Band! 
+                .row
+                  .small-12.columns
+                    label(for='name') Band Name
+                    input(type='text',name='name')
+                .row
+                  .small-12.columns
+                    label(for='image') Band Image
+                    input(type='text',name='image')
+                .row
+                  .small-12.columns
+                    button(type='submit')#makeBand Submit
+      else
+        .row
+          .small-12.columns
+              h2 #{user.name}, see what your band has been up to!
+              a(href='bands/#{user.band}').button.expand.black View Band Page
